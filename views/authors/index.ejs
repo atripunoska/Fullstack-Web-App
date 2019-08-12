@@ -1,11 +1,22 @@
-<h2>Search Authors</h2>
-<form action="/authors" method="GET">
-<label>Name</label>
-<input type="text" name="name" value="<%= searchOptions.name %>">
-<button type="submit">Search</button>
+<h3 class="mt-2 text-uppercase mb-3">Search Authors</h3>
+<form action="/authors" method="GET" class="form-inline">
+<div class="form-group">
+ <label>Name</label>
+</div>
+<div class="form-group mx-sm-3">
+<input class="form-control" type="text" name="name" value="<%= searchOptions.name %>">
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Search</button>
+</div>
 </form>
-<br>
 
+<div class="row mt-4">
+  <div class="col-12 col-sm-5 col-md-4s col-lg-3">
+  <ul class="list-group">
 <% authors.forEach(author => { %>
-    <div><%= author.name %></div>
+    <li class="list-group-item"><%= author.name %></li>
 <% }) %>
+</ul>
+  </div>
+</div>
