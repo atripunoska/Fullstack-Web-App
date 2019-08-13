@@ -1,1 +1,13 @@
-Middle
+<h2>Recently Added</h2>
+
+<div class="row mt-4">
+        <div class="col-12 col-sm-5 col-md-4s col-lg-3">
+            <ul class="list-group">
+                <% books.forEach(book => { %>
+                <li class="list-group-item">
+                    <img height="150" width="100" src="<%= book.coverImagePath %>" />
+                    <%= book.title %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
