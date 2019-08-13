@@ -12,10 +12,16 @@
 </form>
 
 <div class="row mt-4">
-  <div class="col-12 col-sm-5 col-md-4s col-lg-3">
+  <div class="col-12 col-sm-5 col-md-4 col-lg-3">
   <ul class="list-group">
 <% authors.forEach(author => { %>
-    <li class="list-group-item"><%= author.name %></li>
+    <li class="list-group-item"><%= author.name %>
+      <a href="/authors/<%= author.id %>" class="btn btn-secondary">View</a>
+      <a href="/authors/<%= author.id %>/edit" class="btn btn-info">Edit</a>
+      <%- include('../partials/deleteForm', {
+        url: `/authors/${author.id }`
+      } ) %>
+    </li>
 <% }) %>
 </ul>
   </div>
