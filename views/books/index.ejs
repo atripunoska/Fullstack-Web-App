@@ -30,8 +30,9 @@
         <ul class="list-group">
             <% books.forEach(book => { %>
             <li class="list-group-item">
+                <a href="/books/<%= book.id %>">
                 <img height="150" width="100" src="<%= book.coverImagePath %>" />
-                <%= book.title %></li>
+                <%= book.title %></a></li>
             <% }) %>
         </ul>
     </div>

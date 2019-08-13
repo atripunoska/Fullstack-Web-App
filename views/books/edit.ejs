@@ -1,0 +1,7 @@
+<h3 class="h3 my-3 text-uppercase">Edit Book</h3>
+
+<form action="/books/<%= book.id %>?_method=PUT" method="post">
+<%- include('_form_fields') %>
+    <a href="/books/" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-outline-success">Update</button>
+</form>
