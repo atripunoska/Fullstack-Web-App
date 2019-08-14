@@ -1,35 +1,55 @@
 <div class="form-row">
-<div class="col-12 col-md-6">
+  <div class="col-12 col-md-6">
+    <div class="form-group">
       <label>Title</label>
-      <input type="text"  class="form-control" name="title" value="<%= book.title %>">
-    </div><!--/col-12 col-md-6-->
-    <div class="col-12 col-md-6">
+      <input type="text" class="form-control" name="title" value="<%= book.title %>">
+    </div>
+
+  </div>
+  <!--/col-12 col-md-6-->
+  <div class="col-12 col-md-6">
+    <div class="form-group">
       <label>Author</label>
       <select name="author" class="form-control">
-      <% authors.forEach(author => { %>
-        <% if (author.id === book.author) { %>
-          <option selected label="<%= author.name %>" value="<%= author.id %>">
-        <% } else { %>
-          <option label="<%= author.name %>" value="<%= author.id %>">
-        <% } %>
-      <% }) %>
+          <% authors.forEach(author => { %>
+            <% if (author.id === book.author) { %>
+        <option selected label="<%= author.name %>" value="<%= author.id %>">
+          <% } else { %>
+        <option label="<%= author.name %>" value="<%= author.id %>">
+          <% } %>
+          <% }) %>
       </select>
-    </div> <!--.col-12 col-md-6 -->
-    <div class="col-12 col-md-6">
+    </div>
+  </div>
+  <!--.col-12 col-md-6 -->
+  <div class="col-12 col-md-6">
+    <div class="form-group">
       <label>Publish Date</label>
       <input type="date" class="form-control" name="publishDate"
-            value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
-    </div> <!--/.col-12 col-md-6 -->
-    <div class="col-12 col-md-6">
+      value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+    </div>
+  </div>
+  <!--/.col-12 col-md-6 -->
+  <div class="col-12 col-md-6">
+    <div class="form-group">
       <label>Page Count</label>
       <input type="number" class="form-control" name="pageCount" min="1" value="<%= book.pageCount %>">
-    </div> <!--/. col-12 col-md-6 -->
-    <div class="col-12 col-md-6">
+    </div>
+  </div>
+  <!--/. col-12 col-md-6 -->
+  <div class="col-12 col-md-6">
+    <div class="form-group">
       <label>Cover</label>
       <input type="file" class="form-control-file filepond" name="cover">
-    </div> <!--/col-12 col-md-6-->
-    <div class="col-12 col-md-6">
+    </div>
+  </div>
+  <!--/col-12 col-md-6-->
+  <div class="col-12 col-md-6">
+    <div class="form-group">
       <label>Description</label>
-      <textarea  class="form-control" name="description"><%= book.description %></textarea>
-    </div> <!--/col-12 col-md-6-->
-</div> <!--/form-row-->
+      <textarea class="form-control" name="description" rows="6"><%= book.description %></textarea>
+    </div>
+  </div>
+  <!--/col-12 col-md-6-->
+</div>
+<!--/form-row-->

@@ -1,3 +1,46 @@
+@font-face {
+    font-family: 'Merriweather-Light';
+    src: url('../fonts/Merriweather-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather-Regular';
+    src: url('../fonts/Merriweather-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather-Black';
+    src: url('../fonts/Merriweather-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather-Bold';
+    src: url('../fonts/Merriweather-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather-LightItalic';
+    src: url('../fonts/Merriweather-LightItalic.ttf'); 
+  }
+
+
+  @font-face {
+    font-family: 'Merriweather-BoldItalic';
+    src: url('../fonts/Merriweather-BoldItalic.ttf'); 
+  }
+
+  .font-bold{
+    font-family: 'Merriweather-Bold', serif;
+  }
+
+body {
+    font-family: 'Merriweather-Regular', serif;
+}
+
+strong {
+    font-family:'Merriweather-Bold',serif;
+}
+
 .navbar .nav-link {
     color: #fff;
     transition: color .15s ease-in-out;
@@ -7,7 +50,112 @@
     color: #999;
 }
 
+.jumbotron{
+    background-image: url('../images/shutterstock_356218724-2.jpg');
+    background-size: cover;
+    background-position: top center;
+}
 
+@media (min-width: 576px) {
+.jumbotron {
+    padding: 10rem 2rem;
+}
+}
+body {
+    counter-reset: section;
+  }
+  
+
+
+  
+  
+.book-item-wrapper{
+    position: relative;
+    border: 1px solid #f7f7f7;
+    padding: 30px 30px;
+}
+
+
+.book-item-wrapper::before {
+    color: #999;
+    font-size: 1.875rem;
+    font-weight: 500;
+    position: absolute;
+    top:0;
+    left:10px;
+    counter-increment: section;
+    content: counter(section);
+  }
+
+
+.book-title a {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+.book-title a:hover {
+    text-decoration: none;
+    color: #1b7c8df3;
+}
+
+.book-author {
+    font-size: 15px;
+    font-family: 'Merriweather-Black', serif;
+    margin-bottom:10px;
+}
+
+.book-desc {
+    font-size: 14px;
+    font-family: 'Merriweather-LightItalic', serif;
+    line-height: 1.1;
+    min-height:100px;
+}
+.book-item-wrapper .stats {
+    font-family: 'Merriweather-BoldItalic', serif;
+}
+.book-item-wrapper .stats p {
+    margin:0 0;
+}
+
+@media (max-width:768px){
+    .book-desc {
+        min-height: auto;
+    }
+}
+
+.book-item-card{
+    -webkit-transition: all 550ms;
+    -moz-transition: all 550ms;
+    -ms-transition: all 550ms;
+    -o-transition: all 550ms;
+    transition: all 550ms;
+    color:#000;
+}
+.book-item-card:hover {
+    text-decoration:none;
+    background:#f3f3f3;
+    color:#1b7c8df3;
+}
+
+/* .filepond--root {
+    max-height: 150px;
+
+}
+.filepond--item {
+    max-height: 130px;
+} */
+
+.filepond--panel-root {
+
+    background-color: #f1f1f1;
+}
 /** * Block Grid * ---------------------------------------------------------------------------- */
 
 [class*="block-grid-"] {

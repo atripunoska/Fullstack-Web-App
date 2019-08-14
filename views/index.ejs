@@ -1,16 +1,17 @@
-<h2>Recently Added</h2>
+<h2 class="font-bold mb-4">Recently Added Books</h2>
 
 <div class="row mt-4">
-        <div class="col-12 col-sm-5 col-md-4s col-lg-3">
-            <ul class="list-group">
+    <div class="col-12">
+
+            <div class="block-grid-xs-1 block-grid-sm-2 block-grid-md-4">
                 <% books.forEach(book => { %>
-                <li class="list-group-item">
-                    <a href="/books/<%= book.id %>">
-                    <img height="150" width="100" src="<%= book.coverImagePath %>" />
+                <div class="block-grid-item">
+                    <a href="/books/<%= book.id %>" class="d-block shadow-sm book-item-card">
+                    <img height="150" width="100" src="<%= book.coverImagePath %>" class="pr-3"/>
                     <%= book.title %>
                 </a>
-            </li>
+            </div>
                 <% }) %>
-            </ul>
+            </div>
         </div>
     </div>

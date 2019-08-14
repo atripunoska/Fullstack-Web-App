@@ -1,14 +1,23 @@
 <section class="NYT-Best-sellers">
   <div class="container">
     <div class="row">
-      <div class="col-12">Best Sellers NYT</div>
-    </div>
-    <div class="row">
+      <div class="col-12 col-md-6 offset-md-3">
+        <img src="./images/The_New_York_Times_logo.png" class="img-fluid"/>
+        <h1 class="text-center my-4">Best Seller List</h1>
+      </div>
+      <div class="col-12 mt-4">
+        <p class="text-center">Authoritatively ranked lists of books sold in the United States, sorted by format and genre.
+        </p>
+      </div>
+      <div class="col-12">
+        <hr/>
+      </div>
+    </div><!--/.row-->
+    <div class="row mt-3">
       <div class="col-12">
            
-            <div id="best-seller-titles" class="block-grid-xs-1 block-grid-sm-2 block-grid-md-3">
-                
-              
+            <div id="best-seller-titles" class="block-grid-xs-1 block-grid-sm-2 block-grid-md-4">
+                  
             </div>
           
       </div>
@@ -35,19 +44,17 @@
       var weeksOnList = book.weeks_on_list || 'New this week!';
       var listing =
         '<div id="' + book.rank + '" class="block-grid-item">' +
-        '<p>' +
-        '<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/book%20placeholder.png" class="book-cover" id="cover-' + book.rank + '">' +
-        '</p>' +
-        '<h2><a href="' + book.amazon_product_url + '" target="_blank">' + bookInfo.title + '</a></h2>' +
-        '<h4>By ' + bookInfo.author + '</h4>' +
-        '<h4 class="publisher">' + bookInfo.publisher + '</h4>' +
-        '<p>' + bookInfo.description + '</p>' +
+        '<div class="book-item-wrapper shadow-sm"><div>' +
+        '<img src="./images/no_book_cover.png" class="book-cover mx-auto d-block img-fluid" id="cover-' + book.rank + '">' +
+        '</div>' + '<h4 class="text-center book-title"><a href="' + book.amazon_product_url + '" target="_blank">' + bookInfo.title + '</a></h4>' +
+        '<h5 class="font-bold book-author">by ' + bookInfo.author + '</h5>' +
+        '<p class="book-desc">' + bookInfo.description + '</p>' +
         '<div class="stats">' +
         '<hr>' +
         '<p>Last Week: ' + lastWeekRank + '</p>' +
         '<p>Weeks on list: ' + weeksOnList + '</p>' +
         '</div></div>' +
-        '';
+        '</div>';
 
       $('#best-seller-titles').append(listing);
       $('#' + book.rank).attr('nyt-rank', book.rank);

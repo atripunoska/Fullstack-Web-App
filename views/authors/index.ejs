@@ -1,28 +1,54 @@
-<h3 class="mt-2 text-uppercase mb-3">Search Authors</h3>
+<h3 class="mt-2 font-bold mb-3">Search Authors</h3>
 <form action="/authors" method="GET" class="form-inline">
-<div class="form-group">
- <label>Name</label>
-</div>
-<div class="form-group mx-sm-3">
-<input class="form-control" type="text" name="name" value="<%= searchOptions.name %>">
-</div>
-<div class="form-group">
-<button type="submit" class="btn btn-primary">Search</button>
-</div>
+  <div class="form-group">
+    <label>Name</label>
+  </div>
+  <div class="form-group mx-sm-3">
+    <input class="form-control" type="text" name="name" value="<%= searchOptions.name %>">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
 </form>
 
 <div class="row mt-4">
-  <div class="col-12 col-sm-5 col-md-4 col-lg-3">
-  <ul class="list-group">
-<% authors.forEach(author => { %>
-    <li class="list-group-item"><%= author.name %>
-      <a href="/authors/<%= author.id %>" class="btn btn-secondary">View</a>
-      <a href="/authors/<%= author.id %>/edit" class="btn btn-info">Edit</a>
-      <%- include('../partials/deleteForm', {
-        url: `/authors/${author.id }`
-      } ) %>
-    </li>
-<% }) %>
-</ul>
+  <div class="col-12">
+    <hr>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-12">
+    <div class="block-grid-xs-1 block-grid-sm-2 block-grid-md-4">
+      <% authors.forEach(author => { %>
+      <div class="block-grid-item">
+        <div class="author-box shadow p-4">
+          <div class="author-name mb-3">
+            <span class="font-bold">Author Name: </span>
+              <%= author.name %>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+                <a href="/authors/<%= author.id %>" class="btn btn-sm btn-secondary btn-block mb-2">View</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="/authors/<%= author.id %>/edit" class="btn btn-sm btn-info btn-block mb-2">Edit</a>
+            </div>
+          
+          </div>
+          <div class="row">
+            <div class="col-12">
+                <%- include('../partials/deleteForm', {
+                  url: `/authors/${author.id }`
+                } ) %>
+            </div>
+          </div>
+        </div>
+      
+     
+ 
+      </div>
+      <% }) %>
+    </div>
   </div>
 </div>
