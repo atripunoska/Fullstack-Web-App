@@ -46,7 +46,7 @@
         <ul class="block-grid-xs-1 block-grid-sm-2 block-grid-md-4">
                 <% books.forEach(book => { %>
             <li class="block-grid-item">
-                <a href="/books/<%= book.id %>" class="d-block shadow-sm book-item-card">
+                <a href="/books/<%= book.id %>" class="d-flex align-items-center shadow-sm book-item-card">
                     <img height="150" width="100" src="<%= book.coverImagePath %>" class="pr-3"/>
                     <%= book.title %> <span><%= book.author.name %></span></a>
             </li>
