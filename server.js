@@ -28,9 +28,30 @@ const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
+
+
+
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
 app.use('/books', bookRouter);
 app.use('/best-sellers', bestSellers);
 
 app.listen(process.env.PORT || 3000);
+
+
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("mybrary");
+//   var myquery = { title: 'The Brothers Karamazov' };
+//   dbo.collection("books").deleteOne(myquery, function(err, obj) {
+//     if (err) throw err;
+//     console.log("1 document deleted" + myquery);
+//     db.close();
+//   });
+// });
+
+

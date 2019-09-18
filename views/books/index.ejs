@@ -15,7 +15,7 @@
             <div class="form-group">
                 <label>Published After</label>
                 <input class="form-control" type="date" name="publishedAfter"
-                value="<%= searchOptions.publishedAfter %>">
+                    value="<%= searchOptions.publishedAfter %>">
             </div>
         </div>
         <div class="col-12 col-md-6">
@@ -44,13 +44,13 @@
     <div class="col-12">
 
         <ul class="block-grid-xs-1 block-grid-sm-2 block-grid-md-4">
-                <% books.forEach(book => { %>
+            <% books.forEach(book => { %>
             <li class="block-grid-item">
                 <a href="/books/<%= book.id %>" class="d-flex align-items-center shadow-sm book-item-card">
-                    <img height="150" width="100" src="<%= book.coverImagePath %>" class="pr-3"/>
+                    <img height="150" width="100" src="<%= book.coverImagePath %>" class="pr-3" />
                     <%= book.title %> <span><%= book.author.name %></span></a>
             </li>
-                <% }) %>
+            <% }) %>
         </ul>
     </div>
 </div>

@@ -8,12 +8,14 @@ const authorSchema = new mongoose.Schema({
   }
 })
 
+
+//pre - before author delete 
 authorSchema.pre('remove', function(next) {
   Book.find({ author: this.id }, (err, books) => {
     if (err) {
       next(err)
     } else if (books.length > 0) {
-      next(new Error('This author has books still'))
+      next(new Error('There are still books by this author'))
     } else {
       next()
     }

@@ -21,7 +21,6 @@
       </select>
     </div>
   </div>
-  <!--.col-12 col-md-6 -->
   <div class="col-12 col-md-6">
     <div class="form-group">
       <label>Publish Date</label>
@@ -29,27 +28,26 @@
       value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
     </div>
   </div>
-  <!--/.col-12 col-md-6 -->
+
   <div class="col-12 col-md-6">
     <div class="form-group">
       <label>Page Count</label>
       <input type="number" class="form-control" name="pageCount" min="1" value="<%= book.pageCount %>">
     </div>
   </div>
-  <!--/. col-12 col-md-6 -->
+
   <div class="col-12 col-md-6">
     <div class="form-group">
       <label>Cover</label>
       <input type="file" class="form-control-file filepond" name="cover">
     </div>
   </div>
-  <!--/col-12 col-md-6-->
+
   <div class="col-12 col-md-6">
     <div class="form-group">
       <label>Description</label>
       <textarea class="form-control" name="description" rows="6"><%= book.description %></textarea>
     </div>
   </div>
-  <!--/col-12 col-md-6-->
+  
 </div>
-<!--/form-row-->

@@ -42,4 +42,6 @@ bookSchema.virtual('coverImagePath').get(function() {
   }
 })
 
+
+
 module.exports = mongoose.model('Book', bookSchema)
